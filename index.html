@@ -147,6 +147,8 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.8);backdro
 @media (max-width: 900px){.faq-grid{grid-template-columns:minmax(0,1fr);gap:24px}.faq summary{font-size:18px}}
 .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (max-width: 900px){.facts{grid-template-columns:minmax(0,1fr)}}
+.revs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:16px;margin-top:56px}
+.rev{margin:0;padding:32px;border-radius:24px;background:#111;border:1px solid #222;display:flex;flex-direction:column;gap:20px}
 .row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid #262626}
 @media (max-width: 900px){
 .wrap{padding:0 20px}
@@ -358,12 +360,20 @@ section{padding-top:80px !important}
 <h2 class="disp h-l" style="margin:0">Vad kunder <span class="ser acc">säger</span>.</h2>
 <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
 <p style="margin:0;font-size:19px;line-height:1.55;color:#D9D4CB">Har du tatuerat dig hos mig? Berätta hur det var – det hjälper andra att våga boka. Det tar bara en minut på Google.</p>
+<div style="display:flex;align-items:center;gap:10px"><span style="display:flex;gap:2px" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg></span><span style="font-weight:600">5,0</span><span class="mono" style="color:#A39E95">på Google</span></div>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a class="btn btn-acc" id="google-recension" href="https://g.page/r/CVzHUPUXtaOAEBM/review" target="_blank" rel="noopener">Lämna en recension på Google
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </a>
 </div>
 </div>
+</div>
+<div class="revs">
+<figure class="rev">
+<div style="display:flex;gap:2px" role="img" aria-label="5 av 5 stjärnor"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="#FF4D1F"/></svg></div>
+<blockquote style="margin:0;font-size:20px;line-height:1.5;color:#F2EEE6">”Riktigt trevligt och tryggt att tatuera sig! Tillsammans med Rasmus kom vi fram till ett bra motiv och resultatet blir alltid bra!”</blockquote>
+<figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center"><span style="font-weight:600">Oscar V.</span><span class="mono" style="color:#A39E95">Old school · Black &amp; grey · Google</span></figcaption>
+</figure>
 </div>
 </div>
 </section>
