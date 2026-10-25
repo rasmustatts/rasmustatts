@@ -142,6 +142,9 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.8);backdro
 .navlink{position:relative}
 .navlink.active{color:var(--acc)}
 .drop a.active{color:var(--acc)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:64px;align-items:start}
+.faq-grid>*{min-width:0}
+@media (max-width: 900px){.faq-grid{grid-template-columns:minmax(0,1fr);gap:24px}.faq summary{font-size:18px}}
 .row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid #262626}
 @media (max-width: 900px){
 .wrap{padding:0 20px}
@@ -393,7 +396,7 @@ section{padding-top:80px !important}
 
 <!-- FAQ -->
 <section id="faq" style="padding:40px 0 120px">
-<div class="wrap g2" style="align-items:start;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)">
+<div class="wrap faq-grid">
 <div>
 <div class="mono acc" style="margin-bottom:16px">07 — Frågor</div>
 <h2 class="disp h-m" style="margin:0;font-size:88px">Bra att <span class="ser acc">veta</span>.</h2>
