@@ -11,7 +11,7 @@ import sys
 import urllib.request
 
 KEY = os.environ.get("GOOGLE_PLACES_KEY", "").strip()
-PLACE_ID = os.environ.get("PLACE_ID", "").strip()
+PLACE_ID = os.environ.get("PLACE_ID", "").strip() or "ChIJg6aE3yyx8ScRXMdQ9Re1o4A"  # Rasmustatts (cid 9269451572563199836)
 QUERIES = ["Rasmustatts", "Rasmustatts Piteå", "Rasmustatts tatuering Piteå"]
 PAGE = "index.html"
 STAR = ('<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 '
