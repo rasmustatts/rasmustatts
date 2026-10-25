@@ -114,6 +114,31 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.8);backdro
 .burger[aria-expanded="true"] .ic-close{display:block}
 @media (max-width: 900px){.burger.show-sm{display:flex}}
 @media (min-width: 901px){.drop,.drop.open{display:none !important}}
+.proc{padding:120px 0}
+.pstep{padding:32px;border-radius:24px;border:1.5px solid #0A0A0A;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;transition:background .5s,color .5s,opacity .5s,transform .5s}
+.pstep p{color:#3A3733;transition:color .5s}
+.pstep.on{background:#0A0A0A;color:#F2EEE6}
+.pstep.on .num{color:var(--acc)}
+.pstep.on p{color:#CFCAC1}
+.pbar{display:none}
+.proc.pin{padding:0}
+.proc.pin .proc-track{height:330vh;position:relative}
+.proc.pin .proc-stick{position:sticky;top:76px;height:calc(100vh - 76px);height:calc(100svh - 76px);display:flex;align-items:center;overflow:hidden;padding:24px 0}
+.proc.pin .pbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 28px}
+.pbar i{display:block;height:3px;border-radius:2px;background:#D6D1C7;position:relative;overflow:hidden}
+.pbar b{position:absolute;inset:0;background:#0A0A0A;transform-origin:left;transform:scaleX(var(--p,0))}
+.proc.pin .pw{opacity:.18;transition:opacity .5s}
+.proc.pin .pw.on{opacity:1}
+.proc.pin .pstep{opacity:.35;transform:translateY(14px)}
+.proc.pin .pstep.on,.proc.pin .pstep.done{opacity:1;transform:none}
+.proc.pin .pstep.done{opacity:.55}
+@media (max-width: 900px){
+.proc.pin .psteps{display:grid;grid-template-columns:minmax(0,1fr)}
+.proc.pin .pstep{grid-area:1/1;min-height:240px;opacity:0;transform:translateY(24px);pointer-events:none}
+.proc.pin .pstep.on{opacity:1;transform:none;pointer-events:auto}
+.proc.pin .pstep.done{opacity:0;transform:translateY(-24px)}
+.proc.pin .h-l{margin-bottom:28px !important}
+}
 .row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid #262626}
 @media (max-width: 900px){
 .wrap{padding:0 20px}
@@ -246,22 +271,18 @@ section{padding-top:80px !important}
 </section>
 
 <!-- PROCESS -->
-<section id="process" style="padding:120px 0;background:#F2EEE6;color:#0A0A0A">
-<div class="wrap">
+<section id="process" class="proc" style="background:#F2EEE6;color:#0A0A0A">
+<div class="proc-track">
+<div class="proc-stick">
+<div class="wrap" style="width:100%">
 <div class="mono" style="color:#8A2A0E;margin-bottom:16px">03 — Så går det till</div>
-<h2 class="disp h-l" style="margin:0 0 64px">Idé → skiss → <span class="ser" style="color:#C2350F">hud</span>.</h2>
-<div class="g3" style="gap:20px">
-<div style="padding:32px;border-radius:24px;border:1.5px solid #0A0A0A;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
-<div class="disp" style="font-size:72px">01</div>
-<div><h3 style="margin:0 0 10px;font-size:22px;font-weight:600">Hör av dig</h3><p style="margin:0;color:#3A3733">Skicka ett DM med din idé, placering och ungefärlig storlek. Vi bestämmer tid tillsammans.</p></div>
+<h2 class="disp h-l" style="margin:0 0 40px"><span class="pw on" data-w="0">Idé</span> <span class="pw" data-w="1">→ skiss</span> <span class="pw" data-w="2">→ <span class="ser" style="color:#C2350F">hud</span>.</span></h2>
+<div class="pbar" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+<div class="g3 psteps" style="gap:20px">
+<div class="pstep on" data-step="0"><div class="disp num" style="font-size:72px">01</div><div><h3 style="margin:0 0 10px;font-size:22px;font-weight:600">Hör av dig</h3><p style="margin:0">Skicka ett DM eller mejl med din idé, placering och ungefärlig storlek. Vi bestämmer tid tillsammans.</p></div></div>
+<div class="pstep" data-step="1"><div class="disp num" style="font-size:72px">02</div><div><h3 style="margin:0 0 10px;font-size:22px;font-weight:600">Vi ritar</h3><p style="margin:0">Skicka referenser och placering. Du får en skiss att tycka till om innan sessionen.</p></div></div>
+<div class="pstep" data-step="2"><div class="disp num" style="font-size:72px">03</div><div><h3 style="margin:0 0 10px;font-size:22px;font-weight:600">Sessionen</h3><p style="margin:0">Kom utvilad och mätt. Ta det lugnt, vi tar pauser när du behöver. Du får skötselråd med dig hem.</p></div></div>
 </div>
-<div style="padding:32px;border-radius:24px;border:1.5px solid #0A0A0A;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
-<div class="disp" style="font-size:72px">02</div>
-<div><h3 style="margin:0 0 10px;font-size:22px;font-weight:600">Vi ritar</h3><p style="margin:0;color:#3A3733">Skicka referenser och placering. Du får en skiss att tycka till om innan sessionen.</p></div>
-</div>
-<div style="padding:32px;border-radius:24px;background:#0A0A0A;color:#F2EEE6;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
-<div class="disp acc" style="font-size:72px">03</div>
-<div><h3 style="margin:0 0 10px;font-size:22px;font-weight:600">Sessionen</h3><p style="margin:0;color:#CFCAC1">Kom utvilad och mätt. Ta det lugnt, vi tar pauser när du behöver. Du får skötselråd med dig hem.</p></div>
 </div>
 </div>
 </div>
@@ -271,11 +292,7 @@ section{padding-top:80px !important}
 <section id="event" style="padding:120px 0 64px">
 <div class="wrap">
 <div class="mono acc" style="margin-bottom:16px">04 — Event &amp; företag</div>
-<details class="evd">
-<summary>
-<h2 class="disp h-l" style="margin:0">Tatuering <span class="ser acc">på</span> plats.</h2>
-<span class="evmore"><span class="evmore-txt">Läs mer</span><span class="evplus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3v16M3 11h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></span>
-</summary>
+<h2 class="disp h-l" style="margin:0;padding-bottom:28px;border-bottom:1px solid #262626">Tatuering <span class="ser acc">på</span> plats.</h2>
 <p style="margin:32px 0 40px;font-size:19px;line-height:1.55;color:#D9D4CB;max-width:720px">Boka mig till er fest, afterwork, bröllop eller företagsevent. Jag kommer till er och bygger upp en pop-up-studio på plats – gästerna går hem med ett minne som sitter kvar.</p>
 <div class="g3" style="margin-bottom:16px">
 <div class="card" style="min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
@@ -299,7 +316,6 @@ section{padding-top:80px !important}
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </a>
 </div>
-</details>
 </div>
 </section>
 
@@ -485,6 +501,24 @@ var IMG={"liljor":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBA
   var tx = null;
   lb.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
   lb.addEventListener('touchend', function (e) { if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); tx = null; });
+  (function () {
+    var sec = document.getElementById('process');
+    if (!sec || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    sec.classList.add('pin');
+    var track = sec.querySelector('.proc-track'), steps = sec.querySelectorAll('.pstep'), words = sec.querySelectorAll('.pw'), bars = sec.querySelectorAll('.pbar b'), last = -1, tick = false;
+    function upd() {
+      tick = false;
+      var r = track.getBoundingClientRect(), total = r.height - (innerHeight - 76);
+      var pr = Math.min(1, Math.max(0, -r.top / (total || 1)));
+      var st = Math.min(2, Math.floor(pr * 3.0001));
+      bars.forEach(function (b, i) { b.style.setProperty('--p', Math.min(1, Math.max(0, pr * 3 - i)).toFixed(3)); });
+      if (st === last) return; last = st;
+      steps.forEach(function (el, i) { el.classList.toggle('on', i === st); el.classList.toggle('done', i < st); });
+      words.forEach(function (w, i) { w.classList.toggle('on', i <= st); });
+    }
+    addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+    addEventListener('resize', upd); upd();
+  })();
   document.getElementById('yr').textContent = new Date().getFullYear();
   var mb = document.getElementById('menu-btn'), dr = document.getElementById('drop');
   function setMenu(o) { dr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.setAttribute('aria-label', o ? 'Stäng meny' : 'Öppna meny'); }
