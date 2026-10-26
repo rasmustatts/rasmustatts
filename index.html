@@ -41,7 +41,6 @@ a{color:#F2EEE6}a:hover{color:var(--acc)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .marq{display:flex;width:max-content;animation:marq 32s linear infinite;gap:48px;font-size:56px}
 @keyframes marq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion: reduce){.spin,.marq{animation:none}html{scroll-behavior:auto}}
 header.top{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #1C1C1C}
 .gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .tile{position:relative;display:block;width:100%;padding:0;margin:0;aspect-ratio:2/3;border-radius:20px;overflow:hidden;background:#141414;border:1px solid #222;cursor:zoom-in;font:inherit;color:inherit;text-align:left}
@@ -531,7 +530,7 @@ var IMG={"liljor":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBA
   lb.addEventListener('touchend', function (e) { if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); tx = null; });
   (function () {
     var sec = document.getElementById('process');
-    if (!sec || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    if (!sec) return;
     sec.classList.add('pin');
     var track = sec.querySelector('.proc-track'), steps = sec.querySelectorAll('.pstep'), words = sec.querySelectorAll('.pw'), bars = sec.querySelectorAll('.pbar b'), last = -1, tick = false;
     function upd() {
